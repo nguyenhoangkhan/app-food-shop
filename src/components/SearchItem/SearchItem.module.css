@@ -1,0 +1,49 @@
+.SearchItem {
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 12px 0;
+  color: #f8901c;
+  padding: 20px 0;
+}
+.SearchItem:hover {
+  background-color: #f8901c;
+  color: white;
+}
+
+.dishPic {
+  width: 40px;
+  height: 40px;
+}
+.dishPic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.dishName {
+  width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.dishPrice {
+  max-width: 40px;
+  text-align: right;
+}
+.buyBtn {
+  outline: none;
+  border: 1px solid #f8901c;
+  width: 80px;
+  height: 30px;
+  color: #f8901c;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.buyBtn:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 0.8;
+}
