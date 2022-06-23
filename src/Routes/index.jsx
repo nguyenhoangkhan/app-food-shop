@@ -5,36 +5,41 @@ import Favorite from "../Pages/Favorite";
 import Summarize from "../Pages/Summarize";
 import Setting from "../Pages/Setting";
 import CheckOut from "../Pages/CheckOut";
-import DefaultLayout from "../Layout/DefaultLayout";
+import HeaderOnly from "../Layout/HeaderOnly";
 export const publicRoutes = [
   {
     path: "/",
     component: App,
-    layout: DefaultLayout,
+    layout: HeaderOnly,
   },
   {
     path: "/support",
     component: Support,
+    // layout: FooterMenuOnly,
   },
   {
     path: "/account",
     component: Account,
+    // layout: FooterMenuOnly,
   },
   {
     path: "/favorite",
     component: Favorite,
+    // layout: FooterMenuOnly,
   },
   {
     path: "/summarize",
     component: Summarize,
+    // layout: FooterMenuOnly,
   },
   {
     path: "/setting",
     component: Setting,
+    // layout: FooterMenuOnly,
   },
   {
     path: "/checkout",
     component: CheckOut,
-    // layout: null,
+    layout: null,
   },
 ];

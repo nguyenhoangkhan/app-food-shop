@@ -8,6 +8,11 @@ import { StoreContext } from "../store";
 const RightMenu = () => {
   const [state] = useContext(StoreContext);
   const cart = state.cart;
+  // const localCart = JSON.parse(localStorage.getItem("cart"));
+  // const [cart, setCart] = useState(localCart);
+  // useEffect(() => {
+  //   setCart(localCart);
+  // }, [state.cart]);
   return (
     <div className="rightMenu">
       <div className="debitCardContainer">
