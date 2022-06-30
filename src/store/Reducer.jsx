@@ -37,7 +37,6 @@ const Reducer = (state, action) => {
           ),
         };
       }
-
     case INCREASE_CART_QTY:
       return {
         ...state,

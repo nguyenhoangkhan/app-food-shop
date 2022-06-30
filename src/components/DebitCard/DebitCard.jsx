@@ -1,5 +1,5 @@
 import { useContext, memo } from "react";
-import { StoreContext } from "../store";
+import { StoreContext } from "../../store";
 const DebitCard = () => {
   const [state] = useContext(StoreContext);
 

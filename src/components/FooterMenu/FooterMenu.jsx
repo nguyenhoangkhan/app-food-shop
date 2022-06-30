@@ -4,7 +4,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import SummarizeIcon from "@mui/icons-material/Summarize";
 import SettingsIcon from "@mui/icons-material/Settings";
-import MenuContainer from "./MenuContainer";
+import MenuContainer from "../MenuContainer/MenuContainer";
 
 const FooterMenu = () => {
   return (

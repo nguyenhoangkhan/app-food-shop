@@ -1,18 +1,20 @@
-import { useContext } from "react";
-import DebitCard from "./DebitCard";
-import CartItem from "./CartItem";
-import EmptyCart from "./EmptyCart";
-import RightMenuFooter from "./RightMenuFooter";
-import SubMenuContainer from "./SubMenuContainer";
-import { StoreContext } from "../store";
+import { useContext, useEffect, useState } from "react";
+import DebitCard from "../DebitCard";
+import CartItem from "../CartItem";
+import EmptyCart from "../EmptyCart/EmptyCart";
+import RightMenuFooter from "../RightMenuFooter";
+import SubMenuContainer from "../SubMenuContainer/SubMenuContainer";
+import { StoreContext } from "../../store";
 const RightMenu = () => {
   const [state] = useContext(StoreContext);
-  const cart = state.cart;
-  // const localCart = JSON.parse(localStorage.getItem("cart"));
-  // const [cart, setCart] = useState(localCart);
-  // useEffect(() => {
-  //   setCart(localCart);
-  // }, [state.cart]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
+  console.log(cart);
+  useEffect(() => {
+    if (cart?.length) {
+      setCart(state.cart);
+      localStorage.setItem("cart", JSON.stringify(state.cart));
+    }
+  }, [state.cart, cart]);
   return (
     <div className="rightMenu">
       <div className="debitCardContainer">
@@ -20,15 +22,15 @@ const RightMenu = () => {
           <DebitCard />
         </div>
       </div>
-      {cart.length === 0 ? (
+      {state.cart.length === 0 ? (
         <EmptyCart />
       ) : (
         <div className="cartCheckOutContainer">
           <SubMenuContainer name={"Carts Items"} />
           <div className="cartContainer">
             <div className="cartItems">
-              {cart &&
-                cart.map((item, index) => (
+              {state.cart &&
+                state.cart.map((item, index) => (
                   <CartItem
                     key={index}
                     id={item.id}

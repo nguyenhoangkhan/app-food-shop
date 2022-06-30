@@ -2,8 +2,8 @@ import { useState, useEffect, useContext, memo } from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { StoreContext } from "../store";
-import { actions } from "../store";
+import { StoreContext } from "../../store";
+import { actions } from "../../store";
 
 const ItemCard = (props) => {
   const rating = props.ratings;

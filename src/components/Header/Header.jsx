@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react/headless";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { StoreContext } from "../store";
+import { StoreContext } from "../../store";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import Search from "./Search";
+import Search from "../Search";
 const Header = () => {
   const [state] = useContext(StoreContext);
   const [username, setUsername] = useState(localStorage.getItem("username"));

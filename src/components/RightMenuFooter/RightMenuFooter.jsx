@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext, useMemo, memo } from "react";
-import { StoreContext } from "../store/";
+import { StoreContext } from "../../store/";
 
 const RightMenuFooter = () => {
   const [state] = useContext(StoreContext);

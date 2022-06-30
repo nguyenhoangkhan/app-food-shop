@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext, memo } from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { StoreContext } from "../store";
-import { actions } from "../store";
+import { StoreContext } from "../../store";
+import { actions } from "../../store";
 const CartItem = (props) => {
   const [, dispatch] = useContext(StoreContext);
   const [price, setPrice] = useState();
