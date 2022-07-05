@@ -1,0 +1,136 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.checkOut {
+  display: flex;
+  /* min-height: 1000px; */
+}
+.checkOutTitle {
+  margin-bottom: 20px;
+  color: #f8901c;
+}
+.checkOutInputs {
+  flex: 0 0 58.33333%;
+  max-width: 58.33333%;
+}
+.billingDetails {
+  height: 50px;
+  width: 660px;
+  border-bottom: 1px solid #ccc;
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  max-width: 660px;
+  margin: 24px 0;
+}
+.formGroup input {
+  outline: none;
+  border: solid #ccc 1px;
+  padding: 2px 4px;
+  height: 40px;
+  width: 100%;
+}
+.formGroup label {
+  font-weight: bold;
+}
+.nameInputWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.nameInput {
+  display: flex;
+  flex-direction: column;
+}
+.nameInput input {
+  width: 300px;
+}
+.otherOption {
+  display: flex;
+  align-items: center;
+}
+.otherOption input {
+  margin-right: 6px;
+  text-align: center;
+}
+.otherOption label {
+  cursor: pointer;
+}
+.formGroup textarea {
+  height: 90px;
+  padding: 10px;
+  outline: none;
+  border: solid #ccc 1px;
+}
+.checkOutDetails {
+  border: 1px solid #ccc;
+  flex: 0 0 41.66667%;
+  max-width: 41.66667%;
+  height: fill;
+}
+.checkOutDetailsWrapper {
+  padding: 20px;
+}
+.checkOutDetailsWrapper > p {
+  margin-bottom: 20px;
+}
+.orderInfo {
+  padding: 5px 0;
+  display: flex;
+  min-height: 50px;
+  border-bottom: solid #ccc 1px;
+}
+.orderInfoTitle {
+  font-weight: bold;
+}
+.orderInfoTitle:nth-child(1) {
+  width: 150px;
+}
+.orderInfoTitle:nth-child(2) {
+  flex: 1;
+}
+.checkOutDetailsFooterContent {
+  background-color: #efefef;
+}
+.checkOutDetailsFooter {
+  margin-top: 30px;
+}
+.checkOutDetailsFooter p {
+  position: relative;
+  margin-top: 20px;
+  padding: 8px 6px;
+  color: #616a6b;
+}
+.checkOutDetailsFooter p::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #efefef;
+  transform: rotate(45deg);
+}
+.checkOutDetailsFooter input {
+  margin-top: 30px;
+  background-color: #f8901c;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.checkOutDetailsFooter input:hover {
+  opacity: 0.8;
+}
+.listItems {
+  border-bottom: solid #ccc 1px;
+}

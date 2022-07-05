@@ -1,0 +1,12 @@
+.itemOrder {
+  display: flex;
+}
+.item {
+  width: 150px;
+}
+.itemName {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
