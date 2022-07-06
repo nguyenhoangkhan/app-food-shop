@@ -98,19 +98,19 @@ const CheckOut = () => {
               </div>
               <div className={styles.orderInfo}>
                 <span className={styles.orderInfoTitle}>Email</span>
-                <span className={styles.orderInfoTitle}>
+                <span className={styles.orderInfoDetail}>
                   {email || "Enter your email to view shipping options"}
                 </span>
               </div>
               <div className={styles.orderInfo}>
                 <span className={styles.orderInfoTitle}>Phone Number</span>
-                <span className={styles.orderInfoTitle}>
+                <span className={styles.orderInfoDetail}>
                   {number || "Enter your phone number to view shipping options"}
                 </span>
               </div>
               <div className={styles.orderInfo}>
                 <span className={styles.orderInfoTitle}>Shipping</span>
-                <span className={styles.orderInfoTitle}>
+                <span className={styles.orderInfoDetail}>
                   {address || "Enter your address to view shipping options"}
                 </span>
               </div>

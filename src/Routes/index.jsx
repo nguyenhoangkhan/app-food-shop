@@ -7,6 +7,8 @@ import Setting from "../Pages/Setting";
 import CheckOut from "../Pages/CheckOut";
 import HeaderOnly from "../Layout/DefaultLayout";
 import FooterMenuOnly from "../Layout/FooterMenuOnly";
+import Register from "../Pages/Register/Register";
+import Login from "../Pages/Login/Login";
 export const publicRoutes = [
   {
     path: "/",
@@ -43,4 +45,6 @@ export const publicRoutes = [
     component: CheckOut,
     layout: null,
   },
+  { path: "/register", component: Register, layout: null },
+  { path: "/login", component: Login, layout: null },
 ];

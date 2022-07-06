@@ -1,0 +1,144 @@
+.wrapper {
+  padding-top: 60px;
+}
+.form {
+  width: 450px;
+  margin: 0 auto;
+  border: 2px solid #f8901c;
+  box-shadow: 5px 3px 10px rgb(0 0 0 / 20%);
+  padding: 10px 30px;
+  border-radius: 6px;
+  user-select: none;
+  padding-bottom: 40px;
+}
+.form .register-title {
+  text-align: center;
+  margin: 20px 0;
+  color: #f8901c;
+}
+.form-control {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+.form-control label {
+  margin-bottom: 4px;
+}
+.form-control input {
+  border-radius: 3px;
+  height: 40px;
+  outline: none;
+  padding: 0 10px;
+  border: 1px solid #f8901c;
+  font-weight: 300;
+  font-size: 14px;
+}
+.form-control input::placeholder {
+  opacity: 0.8;
+  font-size: 13px;
+}
+.form-control input[type="submit"] {
+  height: 40px;
+  background-color: #f8901c;
+  border-radius: 14px;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.form-control input[type="submit"]:hover {
+  opacity: 0.8;
+}
+.warning-form {
+  font-size: 12px;
+  font-weight: bold;
+  color: red;
+  margin-left: 4px;
+}
+.forgot {
+  text-align: center;
+}
+.forgot a {
+  font-size: 12px;
+}
+.forgot a:hover {
+  color: #f8901c;
+}
+.register {
+  font-size: 13px;
+  margin-top: -10px;
+  text-align: center;
+}
+.register a {
+  color: #f8901c;
+}
+.or {
+  text-align: center;
+  position: relative;
+  color: #f8901c;
+  margin: 18px 0;
+}
+.or::before {
+  content: "";
+  width: 140px;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  right: 0;
+}
+.or::after {
+  content: "";
+  width: 140px;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  left: 0;
+}
+.social-networks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.social-networks p {
+  cursor: pointer;
+  background-color: #f8901c;
+  width: 45%;
+  height: 30px;
+  padding-right: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.3s ease;
+}
+.social-networks p:first-child {
+  color: white;
+  background-color: blue;
+}
+.social-networks p:last-child {
+  color: white;
+  background-color: red;
+}
+.social-networks p span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+.social-networks p:hover {
+  opacity: 0.7;
+}
+.warning-form {
+  font-size: 12px;
+  font-weight: bold;
+  color: red;
+  margin-left: 4px;
+}
