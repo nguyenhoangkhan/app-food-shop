@@ -1,10 +1,11 @@
-import React from "react";
+import FooterMenu from "../../components/FooterMenu";
 import Header from "../../components/Header";
 const HeaderOnly = (props) => {
   return (
     <div>
-      {props.children}
       <Header />
+      {props.children}
+      <FooterMenu />
     </div>
   );
 };

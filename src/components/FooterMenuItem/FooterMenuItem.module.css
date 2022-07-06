@@ -1,0 +1,25 @@
+.footerItem {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  z-index: 1;
+}
+
+.footerItem .icon {
+  position: relative;
+  display: block;
+  line-height: 70px;
+  text-align: center;
+  transition: 0.5s;
+}
+.footerItem .icon .MuiSvgIcon-root {
+  color: #373848;
+}
+.footerItem.active .icon {
+  color: #f8901c;
+  transform: scale(1.4);
+  transition: 0.5s;
+}
+/* .footerItem.active .icon .MuiSvgIcon-root {
+  font-size: 60px;
+} */

@@ -8,7 +8,6 @@ import { StoreContext } from "../../store";
 const RightMenu = () => {
   const [state] = useContext(StoreContext);
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
-  console.log(cart);
   useEffect(() => {
     if (cart?.length) {
       setCart(state.cart);

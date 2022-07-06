@@ -5,7 +5,8 @@ import Favorite from "../Pages/Favorite";
 import Summarize from "../Pages/Summarize";
 import Setting from "../Pages/Setting";
 import CheckOut from "../Pages/CheckOut";
-import HeaderOnly from "../Layout/HeaderOnly";
+import HeaderOnly from "../Layout/DefaultLayout";
+import FooterMenuOnly from "../Layout/FooterMenuOnly";
 export const publicRoutes = [
   {
     path: "/",
@@ -15,27 +16,27 @@ export const publicRoutes = [
   {
     path: "/support",
     component: Support,
-    // layout: FooterMenuOnly,
+    layout: FooterMenuOnly,
   },
   {
     path: "/account",
     component: Account,
-    // layout: FooterMenuOnly,
+    layout: FooterMenuOnly,
   },
   {
     path: "/favorite",
     component: Favorite,
-    // layout: FooterMenuOnly,
+    layout: FooterMenuOnly,
   },
   {
     path: "/summarize",
     component: Summarize,
-    // layout: FooterMenuOnly,
+    layout: FooterMenuOnly,
   },
   {
     path: "/setting",
     component: Setting,
-    // layout: FooterMenuOnly,
+    layout: FooterMenuOnly,
   },
   {
     path: "/checkout",

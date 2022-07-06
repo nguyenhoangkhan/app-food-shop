@@ -2,7 +2,6 @@ import React from "react";
 import { publicRoutes } from "./Routes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./Pages/NotFound";
-import FooterMenu from "./components/FooterMenu";
 
 const Layout = () => {
   return (
@@ -31,7 +30,6 @@ const Layout = () => {
           })}
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
-        <FooterMenu />
       </Router>
     </>
   );
