@@ -28,7 +28,7 @@ const Layout = () => {
               />
             );
           })}
-          <Route path="*" element={<NotFound />}></Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>

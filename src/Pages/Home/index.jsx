@@ -8,11 +8,13 @@ import SubMenuContainer from "../../components/SubMenuContainer";
 import MenuCard from "../../components/MenuCard";
 import ItemCard from "../../components/ItemCard";
 import RightMenu from "../../components/RightMenu";
+import Loading from "../../components/Loading";
 function App() {
   /*Main Dish State */
   const [isMainData, setMainData] = useState(
     Items.filter((item) => item.itemId === "buger01")
   );
+  const [loading, setLoading] = useState(true);
   const [state] = useContext(StoreContext);
   const cart = useMemo(() => [...state.cart], [state.cart]);
   useEffect(() => {
@@ -38,12 +40,20 @@ function App() {
       $(".rightMenu").classList.toggle("active");
     };
   }, [isMainData, cart]);
+  useEffect(() => {
+    const loadingTime = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    return () => clearTimeout(loadingTime);
+  }, []);
   /*Set main dish on filter*/
   const setData = (id) => {
     setMainData(Items.filter((item) => item.itemId === id));
   };
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className="App">
       <main>
         <div className="mainContainer">

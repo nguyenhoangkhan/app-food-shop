@@ -1,5 +1,5 @@
 .wrapper {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 .form {
   width: 450px;
@@ -10,8 +10,9 @@
   border-radius: 6px;
   user-select: none;
   padding-bottom: 40px;
+  border-radius: 50px 0 50px 0;
 }
-.form .register-title {
+.form .login-title {
   text-align: center;
   margin: 20px 0;
   color: #f8901c;
@@ -38,7 +39,7 @@
   opacity: 0.8;
   font-size: 13px;
 }
-.form-control input[type="submit"] {
+.form-control a {
   height: 40px;
   background-color: #f8901c;
   border-radius: 14px;
@@ -51,8 +52,10 @@
   margin-top: 16px;
   font-weight: 600;
   letter-spacing: 1px;
+  text-align: center;
+  line-height: 40px;
 }
-.form-control input[type="submit"]:hover {
+.form-control a:hover {
   opacity: 0.8;
 }
 .warning-form {
@@ -66,17 +69,22 @@
 }
 .forgot a {
   font-size: 12px;
+  transition: 0.3s;
 }
 .forgot a:hover {
   color: #f8901c;
 }
 .register {
   font-size: 13px;
-  margin-top: -10px;
+  margin-top: -7px;
   text-align: center;
 }
 .register a {
   color: #f8901c;
+  transition: 0.3s;
+}
+.register a:hover {
+  opacity: 0.6;
 }
 .or {
   text-align: center;
@@ -118,7 +126,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 .social-networks p:first-child {
   color: white;

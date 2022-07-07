@@ -1,5 +1,5 @@
 .wrapper {
-  padding-top: 40px;
+  padding-top: 50px;
 }
 .form {
   width: 450px;
@@ -9,6 +9,7 @@
   padding: 10px 30px;
   border-radius: 6px;
   user-select: none;
+  border-radius: 50px 0 50px 0;
 }
 .form .register-title {
   text-align: center;
