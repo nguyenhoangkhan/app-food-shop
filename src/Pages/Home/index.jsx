@@ -43,7 +43,7 @@ function App() {
   useEffect(() => {
     const loadingTime = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1500);
     return () => clearTimeout(loadingTime);
   }, []);
   /*Set main dish on filter*/

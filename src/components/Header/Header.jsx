@@ -21,13 +21,13 @@ const Header = () => {
   ];
   const catalogProfileGuest = [
     {
-      title: "Sign Up",
-      path: "sign in",
+      title: "Log in",
+      path: "/Login",
       icon: faArrowRightFromBracket,
     },
     {
-      title: "Sign In",
-      path: "/",
+      title: "Register",
+      path: "/register",
       icon: faArrowRightFromBracket,
     },
   ];
