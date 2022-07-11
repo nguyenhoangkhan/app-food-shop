@@ -2,7 +2,6 @@ import App from "../Pages/Home/";
 import Support from "../Pages/Support";
 import Account from "../Pages/Account";
 import Favorite from "../Pages/Favorite";
-import Summarize from "../Pages/Summarize";
 import Setting from "../Pages/Setting";
 import CheckOut from "../Pages/CheckOut";
 import HeaderOnly from "../Layout/DefaultLayout";
@@ -28,11 +27,6 @@ export const publicRoutes = [
   {
     path: "/favorite",
     component: Favorite,
-    layout: FooterMenuOnly,
-  },
-  {
-    path: "/summarize",
-    component: Summarize,
     layout: FooterMenuOnly,
   },
   {
