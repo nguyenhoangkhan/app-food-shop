@@ -1,36 +1,9 @@
-import { useContext, useEffect, useState, memo } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
-import Tippy from "@tippyjs/react/headless";
+import { useContext, memo } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { StoreContext } from "../../store";
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import Search from "../Search";
 const Header = () => {
   const [state] = useContext(StoreContext);
-  const [username, setUsername] = useState(localStorage.getItem("username"));
-  useEffect(() => {
-    setUsername(localStorage.getItem("username"));
-  }, [username]);
-  const catalogProfileUser = [
-    {
-      title: "Đăng xuất",
-      path: "/",
-      icon: faArrowRightFromBracket,
-    },
-  ];
-  const catalogProfileGuest = [
-    {
-      title: "Log in",
-      path: "/Login",
-      icon: faArrowRightFromBracket,
-    },
-    {
-      title: "Register",
-      path: "/register",
-      icon: faArrowRightFromBracket,
-    },
-  ];
   return (
     <header>
       <img
@@ -39,37 +12,16 @@ const Header = () => {
         className="logo"
       />
       <Search />
-      <Tippy
-        interactive
-        render={(attrs) => (
-          <div className="subProfile" tabIndex="-1" {...attrs}>
-            {username
-              ? catalogProfileUser.map((item, idx) => (
-                  <Link key={idx} to={item.path}>
-                    {" "}
-                    <FontAwesomeIcon icon={item.icon} /> {item.title}
-                  </Link>
-                ))
-              : catalogProfileGuest.map((item, idx) => (
-                  <Link key={idx} to={item.path}>
-                    {" "}
-                    <FontAwesomeIcon icon={item.icon} /> {item.title}
-                  </Link>
-                ))}
-          </div>
-        )}
-      >
-        <div className="profileContainer">
-          <div className="imgBox">
-            <img
-              src="https://cdn4.iconfinder.com/data/icons/instagram-ui-twotone/48/Paul-18-512.png"
-              className="profilePic"
-              alt=""
-            />
-          </div>
-          <h2 className="userName">{username || "GUEST"}</h2>
+      <div className="profileContainer">
+        <div className="imgBox">
+          <img
+            src="https://cdn4.iconfinder.com/data/icons/instagram-ui-twotone/48/Paul-18-512.png"
+            className="profilePic"
+            alt=""
+          />
         </div>
-      </Tippy>
+        <h2 className="userName">GUEST</h2>
+      </div>
       <div className="shoppingCart">
         <ShoppingCartIcon className="cart" />
         {state.cartQty !== 0 ? (

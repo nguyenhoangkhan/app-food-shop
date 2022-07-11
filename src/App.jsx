@@ -3,7 +3,7 @@ import { publicRoutes } from "./Routes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./Pages/NotFound";
 
-const Layout = () => {
+const App = () => {
   return (
     <>
       <Router>
@@ -35,4 +35,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default App;

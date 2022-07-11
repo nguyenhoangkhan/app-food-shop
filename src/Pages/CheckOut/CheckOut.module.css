@@ -8,7 +8,6 @@
 }
 .checkOut {
   display: flex;
-  /* min-height: 1000px; */
 }
 .checkOutTitle {
   margin-bottom: 20px;
@@ -71,7 +70,6 @@
   border: 1px solid #ccc;
   flex: 0 0 41.66667%;
   max-width: 41.66667%;
-  height: fill;
 }
 .checkOutDetailsWrapper {
   padding: 20px;
