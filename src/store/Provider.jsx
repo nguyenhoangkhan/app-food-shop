@@ -19,10 +19,8 @@ const Provider = (props) => {
     setLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user);
         setUser(user);
       } else {
-        console.log(user);
         setUser("");
       }
     });
@@ -38,9 +36,7 @@ const Provider = (props) => {
           displayName: `${firstName} ${lastName}`,
         });
       })
-      .then((res) => {
-        console.log(res);
-      })
+      .then((res) => {})
       .catch((err) => console.log(err.message))
       .finally(() => setLoading(false));
   };

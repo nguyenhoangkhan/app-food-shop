@@ -1,15 +1,17 @@
-import { useContext, memo, useState } from "react";
+import { useContext, memo, useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { StoreContext } from "../../store";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 import styles from "./Register.module.css";
-import Loading from "../../components/Loading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
-  const { registerUser, error, loading } = useContext(StoreContext);
+  const [isShowed, setShow] = useState(false);
+  const { registerUser, error, user } = useContext(StoreContext);
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -64,16 +66,16 @@ const Register = () => {
             values.lastName,
             values.password
           );
-          console.log(values);
-          alert("Register success!!");
         }
       }
     },
   });
-
-  return loading ? (
-    <Loading />
-  ) : (
+  useEffect(() => {
+    if (user) {
+      setShow(true);
+    }
+  }, [user]);
+  return (
     <div className={cx("wrapper")}>
       <form action="" className={cx("form")} onSubmit={formik.handleSubmit}>
         <h1 className={cx("register-title")}>Register</h1>
@@ -175,6 +177,20 @@ const Register = () => {
           You already have an account ? <Link to="/login">CLICK ME</Link>
         </p>
       </form>
+
+      {isShowed ? (
+        <div className={cx("modal")}>
+          <div className={cx("modal-content")}>
+            <FontAwesomeIcon
+              className={cx("icon")}
+              icon={faX}
+              onClick={() => setShow(false)}
+            />
+            <h2>You have successfully registered !</h2>
+            <Link to="/login">Go to Login</Link>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };

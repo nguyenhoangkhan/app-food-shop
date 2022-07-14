@@ -49,7 +49,3 @@ export const privateRoutes = [
   { path: "/login", component: Login, layout: null },
   { path: "/register", component: Register, layout: null },
 ];
-export const publicRoutes = [
-  { path: "/register", component: Register, layout: null },
-  { path: "/login", component: Login, layout: null },
-];

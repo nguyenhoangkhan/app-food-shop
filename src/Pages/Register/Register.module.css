@@ -1,5 +1,7 @@
 .wrapper {
   padding-top: 50px;
+  height: 100vh;
+  position: relative;
 }
 .form {
   width: 450px;
@@ -97,4 +99,57 @@
 }
 .redirect a:hover {
   opacity: 0.6;
+}
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgb(0 0 0 / 20%);
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 5px 3px 10px rgb(0 0 0 / 20%);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.modal-content .icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.modal-content .icon:hover {
+  color: #f8901c;
+}
+.modal-content a {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #f8901c;
+  border-radius: 14px;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  margin-top: 30px;
+}
+.modal-content a:hover {
+  opacity: 0.8;
 }

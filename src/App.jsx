@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { publicRoutes, privateRoutes } from "./Routes";
+import { privateRoutes } from "./Routes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./Pages/NotFound";
 import { StoreContext } from "./store";
