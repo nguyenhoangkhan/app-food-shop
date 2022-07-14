@@ -3,7 +3,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { StoreContext } from "../../store";
 import Search from "../Search";
 const Header = () => {
-  const [state] = useContext(StoreContext);
+  const { state, user } = useContext(StoreContext);
   return (
     <header>
       <img
@@ -20,7 +20,9 @@ const Header = () => {
             alt=""
           />
         </div>
-        <h2 className="userName">GUEST</h2>
+        <h2 className="userName">
+          {user ? user.displayName : "You are not Signed In"}
+        </h2>
       </div>
       <div className="shoppingCart">
         <ShoppingCartIcon className="cart" />

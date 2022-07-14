@@ -6,7 +6,7 @@ import RightMenuFooter from "../RightMenuFooter";
 import SubMenuContainer from "../SubMenuContainer/SubMenuContainer";
 import { StoreContext } from "../../store";
 const RightMenu = () => {
-  const [state] = useContext(StoreContext);
+  const { state } = useContext(StoreContext);
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
   useEffect(() => {
     if (cart?.length) {

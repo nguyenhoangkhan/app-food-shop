@@ -7,7 +7,7 @@ import { actions } from "../../store";
 
 const ItemCard = (props) => {
   const rating = props.ratings;
-  const [, dispatch] = useContext(StoreContext);
+  const { dispatch } = useContext(StoreContext);
   const [isFavorite, setFavorite] = useState(false);
   const [currentValue, setCurrentValue] = useState(Math.floor(rating));
   const [isCart, setCart] = useState();

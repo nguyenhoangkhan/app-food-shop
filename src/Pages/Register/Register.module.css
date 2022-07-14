@@ -54,6 +54,9 @@
   opacity: 0.8;
   font-size: 13px;
 }
+.form-control input:focus {
+  border: 2px #f8901c solid;
+}
 .form-control input[type="submit"] {
   height: 40px;
   background-color: #f8901c;
@@ -76,4 +79,22 @@
   font-weight: bold;
   color: red;
   margin-left: 4px;
+}
+.register-warning {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid red;
+  margin-bottom: 5px;
+}
+.redirect {
+  text-align: center;
+}
+.redirect a {
+  color: #f8901c;
+  transition: 0.3s;
+}
+.redirect a:hover {
+  opacity: 0.6;
 }

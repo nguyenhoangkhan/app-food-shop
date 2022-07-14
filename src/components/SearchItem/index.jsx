@@ -11,7 +11,7 @@ const SearchItem = ({ item }) => {
     imgSrc: item.imgSrc,
     quantity: item.quantity,
   };
-  const [, dispatch] = useContext(StoreContext);
+  const { dispatch } = useContext(StoreContext);
   useEffect(() => {
     const productBuyed = [];
     productBuyed.push(products);

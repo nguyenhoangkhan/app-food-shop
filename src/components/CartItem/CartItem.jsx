@@ -4,7 +4,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { StoreContext } from "../../store";
 import { actions } from "../../store";
 const CartItem = (props) => {
-  const [, dispatch] = useContext(StoreContext);
+  const { dispatch } = useContext(StoreContext);
   const [price, setPrice] = useState();
   useEffect(() => {
     setPrice(Math.round(props.qty) * parseFloat(props.price));

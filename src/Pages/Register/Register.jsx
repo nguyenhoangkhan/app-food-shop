@@ -1,9 +1,15 @@
+import { useContext, memo, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { StoreContext } from "../../store";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 import styles from "./Register.module.css";
+import Loading from "../../components/Loading";
 const cx = classNames.bind(styles);
 const Register = () => {
+  const [errorMessage, setErrorMessage] = useState("");
+  const { registerUser, error, loading } = useContext(StoreContext);
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -39,15 +45,43 @@ const Register = () => {
         .required("Confirm password is required")
         .oneOf([Yup.ref("password"), null], "Passwords must match"),
     }),
-
     onSubmit: (values) => {
-      console.log(values);
+      if (error === "Firebase: Error (auth/email-already-in-use).") {
+        setErrorMessage("Email đã được sử dụng, vui lòng thử lại");
+      } else if (error === "Firebase: Error (auth/wrong-password).") {
+        setErrorMessage("Mật khẩu không chính xác, vui lòng thử lại");
+      } else if (
+        error ===
+        "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."
+      ) {
+        setErrorMessage("Bạn đã truy cập quá nhiều lần, vui lòng thử lại sau");
+        console.log(error);
+      } else {
+        if (values) {
+          registerUser(
+            values.email,
+            values.firstName,
+            values.lastName,
+            values.password
+          );
+          console.log(values);
+          alert("Register success!!");
+        }
+      }
     },
   });
-  return (
+
+  return loading ? (
+    <Loading />
+  ) : (
     <div className={cx("wrapper")}>
       <form action="" className={cx("form")} onSubmit={formik.handleSubmit}>
         <h1 className={cx("register-title")}>Register</h1>
+        {errorMessage ? (
+          <p className={cx("register-warning")}>{errorMessage}</p>
+        ) : (
+          ""
+        )}
         <div className={cx("name")}>
           <div className={cx("form-control", "first-name")}>
             <label htmlFor="">First Name:</label>
@@ -137,9 +171,12 @@ const Register = () => {
         <div className={cx("form-control")}>
           <input type="submit" value="Register" />
         </div>
+        <p className={cx("redirect")}>
+          You already have an account ? <Link to="/login">CLICK ME</Link>
+        </p>
       </form>
     </div>
   );
 };
 
-export default Register;
+export default memo(Register);

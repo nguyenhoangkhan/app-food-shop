@@ -3,7 +3,7 @@ import { useContext, useMemo, memo } from "react";
 import { StoreContext } from "../../store/";
 
 const RightMenuFooter = () => {
-  const [state] = useContext(StoreContext);
+  const { state } = useContext(StoreContext);
   const cart = state.cart;
   const totalPrice = useMemo(
     () =>

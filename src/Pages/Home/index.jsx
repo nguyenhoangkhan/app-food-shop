@@ -10,12 +10,12 @@ import ItemCard from "../../components/ItemCard";
 import RightMenu from "../../components/RightMenu";
 import Loading from "../../components/Loading";
 function App() {
+  const { loading, state } = useContext(StoreContext);
   /*Main Dish State */
   const [isMainData, setMainData] = useState(
     Items.filter((item) => item.itemId === "buger01")
   );
-  const [loading, setLoading] = useState(true);
-  const [state] = useContext(StoreContext);
+
   const cart = useMemo(() => [...state.cart], [state.cart]);
   useEffect(() => {
     const $ = document.querySelector.bind(document);
@@ -40,12 +40,7 @@ function App() {
       $(".rightMenu").classList.toggle("active");
     };
   }, [isMainData, cart]);
-  useEffect(() => {
-    const loadingTime = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-    return () => clearTimeout(loadingTime);
-  }, []);
+
   /*Set main dish on filter*/
   const setData = (id) => {
     setMainData(Items.filter((item) => item.itemId === id));

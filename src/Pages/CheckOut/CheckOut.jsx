@@ -3,7 +3,7 @@ import styles from "./CheckOut.module.css";
 import { StoreContext } from "../../store";
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
 const CheckOut = () => {
-  const [state] = useContext(StoreContext);
+  const { state } = useContext(StoreContext);
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [address, setAddress] = useState("");

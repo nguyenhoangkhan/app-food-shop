@@ -1,7 +1,7 @@
 import { useContext, memo } from "react";
 import { StoreContext } from "../../store";
 const DebitCard = () => {
-  const [state] = useContext(StoreContext);
+  const { state } = useContext(StoreContext);
 
   return (
     <div className="cardGroup">

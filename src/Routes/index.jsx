@@ -8,7 +8,9 @@ import HeaderOnly from "../Layout/DefaultLayout";
 import FooterMenuOnly from "../Layout/FooterMenuOnly";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
-export const publicRoutes = [
+import ForgotPassword from "../Pages/ForgotPassword";
+
+export const privateRoutes = [
   {
     path: "/",
     component: App,
@@ -39,6 +41,15 @@ export const publicRoutes = [
     component: CheckOut,
     layout: null,
   },
+  {
+    path: "/forgotpassword",
+    component: ForgotPassword,
+    layout: null,
+  },
+  { path: "/login", component: Login, layout: null },
+  { path: "/register", component: Register, layout: null },
+];
+export const publicRoutes = [
   { path: "/register", component: Register, layout: null },
   { path: "/login", component: Login, layout: null },
 ];
