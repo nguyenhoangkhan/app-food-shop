@@ -1,4 +1,4 @@
-import { useState, useContext, memo } from "react";
+import { useState, useContext, memo, useEffect } from "react";
 import { StoreContext } from "../../store";
 import { useFormik } from "formik";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -14,27 +14,26 @@ const Login = () => {
       password: "",
     },
     onSubmit: (values) => {
-      if (error === "Firebase: Error (auth/invalid-email).") {
-        setErrorMessage("Email đăng nhập không chính xác, vui lòng thử lại");
-      } else if (error === "Firebase: Error (auth/wrong-password).") {
-        setErrorMessage("Mật khẩu không chính xác, vui lòng thử lại");
-      } else if (
-        error ===
-        "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."
-      ) {
-        setErrorMessage(
-          "Điền sai thông tin đăng nhập quá nhiều lần, vui lòng thử lại sau"
-        );
-        console.log(error);
-      }
       if (values) {
         loginUser(values.email, values.password);
       }
     },
   });
-  const [errorMessage, setErrorMessage] = useState("");
-  const { loginUser, error } = useContext(StoreContext);
 
+  const [errorMessage, setErrorMessage] = useState("");
+  const { loginUser, error, signInGoogle, signInFacebook } =
+    useContext(StoreContext);
+  const handleSignInGoogle = () => {
+    signInGoogle();
+  };
+  const handleSignInFacebook = () => {
+    signInFacebook();
+  };
+  useEffect(() => {
+    if (error) {
+      setErrorMessage("Thông tin đăng nhập không chính xác, vui lòng thử lại");
+    }
+  }, []);
   return (
     <div className={cx("wrapper")}>
       <form action="" className={cx("form")} onSubmit={formik.handleSubmit}>
@@ -65,7 +64,7 @@ const Login = () => {
           />
         </div>
         <div className={cx("form-control")}>
-          <button>Login</button>
+          <button type="submit">Login</button>
         </div>
         <p className={cx("login")}>
           If you don't have an account<Link to="/register"> CLICK ME!</Link>
@@ -75,13 +74,13 @@ const Login = () => {
         </p>
         <p className={cx("or")}>Or</p>
         <div className={cx("social-networks")}>
-          <p>
+          <p onClick={handleSignInFacebook}>
             {" "}
             <FacebookIcon /> <span>Login with Facebook</span>
           </p>
-          <p>
+          <p onClick={handleSignInGoogle}>
             <GoogleIcon />
-            <span>Login with Facebook</span>
+            <span>Login with Google</span>
           </p>
         </div>
       </form>

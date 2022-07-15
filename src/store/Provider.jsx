@@ -6,8 +6,11 @@ import {
   updateProfile,
   onAuthStateChanged,
   sendPasswordResetEmail,
+  signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, providerGoogle, providerFacebook } from "../firebase";
 import Context from "./Context";
 import Reducer, { initialState } from "./Reducer";
 const Provider = (props) => {
@@ -49,6 +52,7 @@ const Provider = (props) => {
       })
       .catch((err) => {
         setError(err.message);
+        console.log(err.message);
       })
       .finally(() => setLoading(false));
   };
@@ -66,6 +70,53 @@ const Provider = (props) => {
   const forgotPassword = (email) => {
     sendPasswordResetEmail(auth, email);
   };
+  const signInGoogle = () => {
+    signInWithPopup(auth, providerGoogle)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        console.log(token);
+        // The signed-in user info.
+        // The signed-in user info.
+        const user = result.user;
+        console.log(user);
+        window.location = "/";
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        // The email of the user's account used.
+        const email = error.customData.email;
+        console.log(email);
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        console.log(credential);
+        // ...
+      });
+  };
+  const signInFacebook = () => {
+    signInWithPopup(auth, providerFacebook)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+        window.location = "/";
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+
+        // ...
+      });
+  };
   const contextValue = {
     state,
     user,
@@ -76,6 +127,8 @@ const Provider = (props) => {
     loginUser,
     logoutUser,
     forgotPassword,
+    signInGoogle,
+    signInFacebook,
   };
   return (
     <Context.Provider value={contextValue}>{props.children}</Context.Provider>
