@@ -9,6 +9,7 @@ import FooterMenuOnly from "../Layout/FooterMenuOnly";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import ForgotPassword from "../Pages/ForgotPassword";
+import Admin from "../Pages/Admin";
 
 export const privateRoutes = [
   {
@@ -48,4 +49,5 @@ export const privateRoutes = [
   },
   { path: "/login", component: Login, layout: null },
   { path: "/register", component: Register, layout: null },
+  { path: "/admin", component: Admin, layout: null },
 ];

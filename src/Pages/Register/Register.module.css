@@ -1,7 +1,5 @@
 .wrapper {
-  padding-top: 50px;
-  height: 100vh;
-  position: relative;
+  margin-top: 50px;
 }
 .form {
   width: 450px;
@@ -152,4 +150,9 @@
 }
 .modal-content a:hover {
   opacity: 0.8;
+}
+@media only screen and (min-width: 380px) and (max-width: 768px) {
+  .form {
+    width: 100%;
+  }
 }
